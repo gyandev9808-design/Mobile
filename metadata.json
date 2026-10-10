@@ -1,0 +1,6 @@
+{
+  "name": "DelegateX",
+  "description": "Diplomatic conference portal for registering Chairs and Delegates with live session tools connected to delegatex.ai.studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
