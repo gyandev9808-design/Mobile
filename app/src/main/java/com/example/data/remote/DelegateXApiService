@@ -1,0 +1,27 @@
+package com.example.data.remote
+
+import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Query
+
+interface DelegateXApiService {
+  @GET("api/status")
+  suspend fun getStatus(): Response<ServerStatusResponse>
+
+  @POST("api/chairs/register")
+  suspend fun registerChair(
+    @Body chair: ChairApiDto
+  ): Response<RegistrationApiResponse>
+
+  @POST("api/delegates/register")
+  suspend fun registerDelegate(
+    @Body delegate: DelegateApiDto
+  ): Response<RegistrationApiResponse>
+
+  @GET("api/delegates")
+  suspend fun getDelegates(
+    @Query("committee") committee: String? = null
+  ): Response<List<DelegateApiDto>>
+}
